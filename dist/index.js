@@ -9073,7 +9073,7 @@ async function moveCardsToList(cardIds, listId) {
 		cardIds.map((cardId) => {
 			console.log('Moving card to a list', cardId, listId)
 
-			const url = `https://api.trello.com/1/cards/${cardId}`
+			const url = `https://api.trello.com/c/1/cards/${cardId}`
 
 			return axios__WEBPACK_IMPORTED_MODULE_0__.put(url, {
 					key: trelloApiKey,
@@ -9099,7 +9099,7 @@ async function addAttachmentToCards(cardIds, link) {
 			}
 			console.log('Adding attachment to the card', cardId, link)
 
-			const url = `https://api.trello.com/1/cards/${cardId}/attachments`
+			const url = `https://api.trello.com/c/1/cards/${cardId}/attachments`
 
 			return axios__WEBPACK_IMPORTED_MODULE_0__.post(url, {
 					key: trelloApiKey,
@@ -9116,7 +9116,7 @@ async function addAttachmentToCards(cardIds, link) {
 async function getCardAttachments(cardId) {
 	console.log('Checking existing attachments', cardId)
 
-	const url = `https://api.trello.com/1/cards/${cardId}/attachments`
+	const url = `https://api.trello.com/c/1/cards/${cardId}/attachments`
 
 	return await axios__WEBPACK_IMPORTED_MODULE_0__.get(url, {
 			params: {
@@ -9160,7 +9160,7 @@ function getTrelloMemberId(githubUserName) {
 
 	console.log('Searching Trello member id by username', username)
 
-	const url = `https://api.trello.com/1/members/${username}`
+	const url = `https://api.trello.com/b/1/real-estate-website/member/${username}`
 
 	return axios__WEBPACK_IMPORTED_MODULE_0__.get(url, {
 			params: {
@@ -9211,7 +9211,7 @@ function addNewMembers(cardInfo, memberIds) {
 function removeMemberFromCard(cardId, memberId) {
 	console.log('Removing card member', cardId, memberId)
 
-	const url = `https://api.trello.com/1/cards/${cardId}/idMembers/${memberId}`
+	const url = `https://api.trello.com/b/1/cards/${cardId}/idMembers/${memberId}`
 
 	axios__WEBPACK_IMPORTED_MODULE_0__.delete(url, {
 			params: {
@@ -9227,7 +9227,7 @@ function removeMemberFromCard(cardId, memberId) {
 function addMemberToCard(cardId, memberId) {
 	console.log('Adding member to a card', cardId, memberId)
 
-	const url = `https://api.trello.com/1/cards/${cardId}/idMembers`
+	const url = `https://api.trello.com/b/1/cards/${cardId}/idMembers`
 
 	axios__WEBPACK_IMPORTED_MODULE_0__.post(url, {
 			key: trelloApiKey,
@@ -9297,7 +9297,7 @@ async function getBranchName(head) {
 async function getBoardLabels(boardId) {
 	console.log('Getting board labels', boardId)
 
-	const url = `https://api.trello.com/1/boards/${boardId}/labels`
+	const url = `https://api.trello.com/b/1/boards/${boardId}/labels`
 
 	return await axios__WEBPACK_IMPORTED_MODULE_0__.get(url, {
 			params: {
@@ -9328,7 +9328,7 @@ function findMatchingLabel(branchLabel, boardLabels) {
 async function addLabelToCard(cardId, labelId) {
 	console.log('Adding label to a card', cardId, labelId)
 
-	const url = `https://api.trello.com/1/cards/${cardId}/idLabels`
+	const url = `https://api.trello.com/b/1/cards/${cardId}/idLabels`
 
 	axios__WEBPACK_IMPORTED_MODULE_0__.post(url, {
 			key: trelloApiKey,
@@ -9343,7 +9343,7 @@ async function addLabelToCard(cardId, labelId) {
 async function getCardInfo(cardId) {
 	console.log('Getting card info', cardId)
 
-	const url = `https://api.trello.com/1/cards/${cardId}`
+	const url = `https://api.trello.com/c/1/cards/${cardId}`
 
 	return await axios__WEBPACK_IMPORTED_MODULE_0__.get(url, {
 			params: {
